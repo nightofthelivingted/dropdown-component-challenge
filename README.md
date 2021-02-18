@@ -1,8 +1,9 @@
 # Dropdown Component Challenge
-Your task is to create the design in the design1.png file in App.js
+This exercise is mainly about styling, semantic/accessible JSX, and React basics. Your task is to create the design in the design1.png file in App.js
 
-1. Must use a reusable dropdown component using React.
-2. Match the styling and placement of the design. Font is Roboto.
+1. Must create and use a reusable dropdown component.
+2. Use the options `groupOptions` for the first dropdown, and `singerOptions` for the second dropdown.
+3. Match the styling and placement of the design. Font is Roboto.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
