@@ -6,7 +6,7 @@ From the provided screen shot, it wasn't clear whether this was a custom `select
 
 As the menu itself is an OS component instead of browser-based, it's nearly impossible to style in a consistent, cross-borwser way.
 
-A truly custom `select` element is possible but a complex project to ensure WCAG compliance and keyboard accessibility — the testing alone would be outside of the project's "React basics" scope. It's complex enough that for any production code, I would strongly recommend using an open-source project [React Select](https://react-select.com/home), where the large install base can keep us honest about defects.
+A truly custom `select` element is possible but a complex project to ensure WCAG compliance and keyboard accessibility — the testing alone would be outside of the project's "React basics" scope. It's complex enough that for any production code, I would strongly recommend using an open-source project like [React Select](https://react-select.com/home), where the large install base can keep us honest about defects.
 
 ## Additions to scope
 
