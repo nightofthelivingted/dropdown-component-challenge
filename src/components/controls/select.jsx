@@ -11,13 +11,20 @@ export default class Select extends React.Component {
     this.state = {
       options: [],
     }
+  }
+
+  componentDidMount() {
+    const { options } = this.props
+    const newOptions = []
 
     // convert option strings to title case, load into state
-    props.options.forEach((option) => {
-      const newOption = titleCase(option)
-
-      this.state.options.push(newOption) // eslint-disable-line react/destructuring-assignment
+    options.forEach((option) => {
+      let cloneOption = option
+      cloneOption = titleCase(cloneOption)
+      newOptions.push(cloneOption)
     })
+
+    this.setState({ options: newOptions })
   }
 
   render() {

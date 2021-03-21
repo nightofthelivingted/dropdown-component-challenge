@@ -12,9 +12,14 @@ export default class SelectGroup extends React.Component {
     this.state = {
       options: [],
     }
+  }
+
+  componentDidMount() {
+    const { options } = this.props
+    const newOptions = []
 
     // convert option strings to title case, load into state
-    props.options.forEach((option) => {
+    options.forEach((option) => {
       let cloneOption = { ...option }
 
       // capitalize key
@@ -24,9 +29,11 @@ export default class SelectGroup extends React.Component {
       // capitalize values
       cloneOption[key].forEach((player, i) => { cloneOption[key][i] = titleCase(player) })
 
-      // update default state
-      this.state.options.push(cloneOption) // eslint-disable-line react/destructuring-assignment
+      // add to newOptions
+      newOptions.push(cloneOption)
     })
+
+    this.setState({ options: newOptions })
   }
 
   // convert options into select optGroup options
