@@ -12,11 +12,9 @@ export default class SelectGroup extends React.Component {
     this.state = {
       options: [],
     }
-  }
 
-  componentDidMount() {
     // init options array
-    const { options } = this.props
+    const { options } = props
     const newOptions = []
 
     // convert option strings to title case, load into state
@@ -29,7 +27,8 @@ export default class SelectGroup extends React.Component {
       newOptions.push(cloneOption)
     })
 
-    this.setState({ options: newOptions })
+    // eslint-disable-next-line react/destructuring-assignment
+    this.state.options = newOptions
   }
 
   // convert options into select optGroup options

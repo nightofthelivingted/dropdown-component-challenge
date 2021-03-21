@@ -11,14 +11,12 @@ export default class Select extends React.Component {
     this.state = {
       options: [],
     }
-  }
 
-  componentDidMount() {
     // init options array
     const { options } = this.props
     const newOptions = titleCaseArray(options)
 
-    this.setState({ options: newOptions })
+    this.state.options = newOptions
   }
 
   render() {
