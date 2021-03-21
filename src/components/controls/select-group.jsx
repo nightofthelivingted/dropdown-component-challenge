@@ -21,14 +21,11 @@ export default class SelectGroup extends React.Component {
 
     // convert option strings to title case, load into state
     options.forEach((option) => {
-      // capitalize key
       const cloneOption = titleCaseKeys(option)
       const key = Object.keys(cloneOption)[0]
 
-      // capitalize values
       cloneOption[key] = titleCaseArray(cloneOption[key])
 
-      // add to newOptions
       newOptions.push(cloneOption)
     })
 
