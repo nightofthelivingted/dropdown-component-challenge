@@ -1,6 +1,6 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import titleCase from '../helpers/title-case'
+import titleCaseArray from '../helpers/title-case-array'
 import StyledSelect from '../styles/forms/select'
 import Label from '../styles/forms/label'
 
@@ -14,15 +14,9 @@ export default class Select extends React.Component {
   }
 
   componentDidMount() {
+    // init options array
     const { options } = this.props
-    const newOptions = []
-
-    // convert option strings to title case, load into state
-    options.forEach((option) => {
-      let cloneOption = option
-      cloneOption = titleCase(cloneOption)
-      newOptions.push(cloneOption)
-    })
+    const newOptions = titleCaseArray(options)
 
     this.setState({ options: newOptions })
   }

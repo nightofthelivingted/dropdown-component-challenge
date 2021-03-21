@@ -1,7 +1,7 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import titleCase from '../helpers/title-case'
 import titleCaseKeys from '../helpers/title-case-keys'
+import titleCaseArray from '../helpers/title-case-array'
 import StyledSelect from '../styles/forms/select'
 import Label from '../styles/forms/label'
 
@@ -15,19 +15,18 @@ export default class SelectGroup extends React.Component {
   }
 
   componentDidMount() {
+    // init options array
     const { options } = this.props
     const newOptions = []
 
     // convert option strings to title case, load into state
     options.forEach((option) => {
-      let cloneOption = { ...option }
-
       // capitalize key
-      cloneOption = titleCaseKeys(cloneOption)
+      const cloneOption = titleCaseKeys(option)
       const key = Object.keys(cloneOption)[0]
 
       // capitalize values
-      cloneOption[key].forEach((player, i) => { cloneOption[key][i] = titleCase(player) })
+      cloneOption[key] = titleCaseArray(cloneOption[key])
 
       // add to newOptions
       newOptions.push(cloneOption)
