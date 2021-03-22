@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import Select from './components/controls/select';
+import DuelingSelects from './components/controls/dueling-selects'
 import SelectGroup from './components/controls/select-group';
 import GlobalStyle from './components/styles/global'
 
 const groupOptions = ['singers', 'actors', 'athletes'];
 const singerOptions = ['beyonce', 'bob dylan', 'taylor swift', 'prince'];
-// const actorOptions = ["will smith", "kristen bell", "daniel radcliffe", "eva longoria"]
-// const athleteOptions = ["payton manning", "steph curry", "serena williams", "tiger woods"]
+const actorOptions = ['will smith', 'kristen bell', 'daniel radcliffe', 'eva longoria']
+const athleteOptions = ['payton manning', 'steph curry', 'serena williams', 'tiger woods']
 const fakeOptionsService = [
   { singers: ['beyonce', 'bob dylan', 'taylor swift', 'prince'] },
   { actors: ['will smith', 'kristen bell', 'daniel radcliffe', 'eva longoria'] },
@@ -46,10 +46,18 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <section>
-        <Row>
-          <Select label="Choose your type" options={groupOptions} />
-          <Select label="Choose your player" options={singerOptions} placeholder />
-        </Row>
+        <DuelingSelects
+          categories={groupOptions}
+          categoriesLabel="Choose your type"
+          items={
+            {
+              singers: singerOptions,
+              actors: actorOptions,
+              athletes: athleteOptions,
+            }
+          }
+          itemsLabel="Choose your player"
+        />
       </section>
       <section>
         <Heading>✨ Alternate optgroup option ✨</Heading>
