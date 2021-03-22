@@ -11,7 +11,7 @@ A truly custom `select` element is possible but a complex project to ensure WCAG
 ## Additions to scope
 
 1. Added a focus state that wasn't included in the spec.
-1. The dueling `selects` could be overly complex in production for both dev and UX. I created an alternate version that leverages `optgroup` to combine both types and players into a control.
+1. Created dueling selects component with two new controlled select components. _Choose your type_ select not controls the options available for _Choose your player_ select.
 
 ---
 
