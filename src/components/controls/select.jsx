@@ -13,21 +13,31 @@ export default class Select extends React.Component {
     }
 
     // init options array
-    const { options } = this.props
+    const { options, placeholder } = this.props
     const newOptions = titleCaseArray(options)
 
     this.state.options = newOptions
+    // eslint-disable-next-line prefer-destructuring
+    this.state.value = placeholder ? 'DEFAULT' : newOptions[0]
+  }
+
+  onChange = (eventTargetValue) => {
+    this.setState({ value: eventTargetValue })
   }
 
   render() {
     const { label, placeholder } = this.props
-    const { options } = this.state
+    const { options, value } = this.state
     const key = uuidv4()
 
     return (
       <Label>
         {label}
-        <StyledSelect key={key} defaultValue={placeholder ? 'DEFAULT' : ''}>
+        <StyledSelect
+          key={key}
+          value={value}
+          onChange={(event) => this.onChange(event.target.value)}
+        >
           { placeholder && (<option key={uuidv4()} value="DEFAULT" disabled>-Select an option-</option>)}
           {options.map((option) => <option key={uuidv4()} value={option}>{option}</option>)}
         </StyledSelect>
