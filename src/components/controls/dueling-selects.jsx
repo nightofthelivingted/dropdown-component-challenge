@@ -1,7 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable prefer-destructuring */
-/* eslint-disable no-console */
-/* eslint-disable no-unused-vars */
 import React from 'react'
 import styled from 'styled-components'
 import ControlledSelect from './select-controlled'
@@ -74,6 +70,7 @@ export default class DuelingSelects extends React.Component {
     }
   }
 
+  // eslint-disable-next-line no-unused-vars
   handleItemsChange = (event) => {
     const { placeholderActive } = this.state
 
